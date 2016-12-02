@@ -1,8 +1,8 @@
 export class Quote {
 
-    constructor(private quote: string,
-                private author: string,
-                private date: Date) {
+    constructor(quote: string,
+                author: string,
+                date: Date) {
     }
 
     static parse(json: any) {
