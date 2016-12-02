@@ -18,7 +18,13 @@ export class QuoteComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.quotes$.subscribe(data => this.currentQuotes = data);
+        this.quotes$.subscribe(data => {
+            this.currentQuotes = data;
+            if(!this.displayQuote){
+                this.getQuote()
+            }
+        });
+
     }
 
     getQuote() {
