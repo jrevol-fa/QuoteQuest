@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFire } from 'angularfire2';
 
 @Component({
     selector: 'page-form',
@@ -8,10 +9,12 @@ export class FormPage {
 
     model = {};
 
-    constructor() {
+    constructor(public af: AngularFire) {
     }
 
-
+    onSubmit() {
+        this.af.database.list('/quotesTest').push(this.model);
+    }
 
 
 }
