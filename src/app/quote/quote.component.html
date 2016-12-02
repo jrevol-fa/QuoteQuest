@@ -1,0 +1,9 @@
+<h1>
+    <ul>
+        <li class="text" *ngFor="let item of items | async">
+            {{item.quote}}
+            {{item.author}}
+            {{item.date}}
+        </li>
+    </ul>
+</h1>
