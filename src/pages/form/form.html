@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Form</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h2>Add a new quote</h2>
+    <form id="quoteForm" (ngSubmit)="onSubmit(model)" #quoteForm="ngForm">
+        <div class="row">
+            <div class="small-12 columns">
+                <label for="quote">
+                <textarea id="quote" name="quote" required
+                          [(ngModel)]="model.quote" #quote="ngModel"
+                          class="large border-t border-large margin-reset"></textarea>
+                </label>
+                <label for="author">
+                    <input type="text" placeholder="Author" id="author" name="author"
+                           [(ngModel)]="model.author" #author="ngModel"
+                           class="large border-t border-large margin-reset"/>
+                </label>
+                <label for="date">
+                    <input type="date" placeholder="Date" id="date" name="date"
+                           [(ngModel)]="model.date" #date="ngModel"
+                           class="large border-t border-large margin-reset"/>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" class="button finact large expanded" value="Validate">
+        </div>
+    </form>
+</ion-content>
+
