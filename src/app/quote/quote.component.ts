@@ -10,7 +10,7 @@ export class QuoteComponent implements OnInit {
 
   items: FirebaseListObservable<any[]>;
 
-  constructor(af: AngularFire) {
+  constructor(public af: AngularFire) {
     this.items = af.database.list('/quotes');
     // qs.getRandomQuote().subscribe();
     // af.database.list('/quotes').subscribe(datas => console.log(datas))
@@ -18,6 +18,17 @@ export class QuoteComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  push(){
+    let thenableReference = this.af.database.list('/quotes').push(
+        {
+          "author" : "testPush",
+          "date" : "2016-10-30",
+          "quote" : "quote de push"
+        }
+    );
+    console.log(thenableReference)
   }
 
 }
