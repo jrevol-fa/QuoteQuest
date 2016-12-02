@@ -13,7 +13,7 @@ export class FormPage {
     }
 
     onSubmit() {
-        this.af.database.list('/quotesTest').push(this.model);
+        this.af.database.list('/quotes').push(this.model);
     }
 
 

@@ -14,7 +14,7 @@ export class QuoteComponent implements OnInit {
     private currentQuotes: Quote[];
 
     constructor(public af: AngularFire, public service: QuoteDataService) {
-        this.quotes$ = af.database.list('/quotesTest');
+        this.quotes$ = af.database.list('/quotes');
     }
 
     ngOnInit(): void {
